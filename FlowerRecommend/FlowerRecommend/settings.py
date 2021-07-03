@@ -36,12 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
+    'django.contrib.staticfiles',
     'order.apps.OrderConfig',
     'review.apps.ReviewConfig',
     'register.apps.RegisterConfig',
     'recommend.apps.RecommendConfig',
-
+    'map.apps.MapConfig',
 ]
 
 MIDDLEWARE = [
