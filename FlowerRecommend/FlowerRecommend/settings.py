@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     'recommend.apps.RecommendConfig',
     'map.apps.MapConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
