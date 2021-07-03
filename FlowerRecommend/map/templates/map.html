@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>키워드로 장소검색하기</title>
+
+</head>
+<body>
+<br><br><br>
+<div id="pic" style="width:50%;height:400px;float:left;margin-left:50px;">
+<img src="https://i.pinimg.com/564x/0c/a0/c9/0ca0c94d8efb052a681da21612eeda0c.jpg"></div>
+
+<div id="map" style="width:45%;height:400px;float:right;margin-right:20px;"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf58464a972fefa107b2cdd6a1440c6&libraries=services"></script>
+<script>
+// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
+var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places(); 
+
+// 키워드로 장소를 검색합니다
+ps.keywordSearch('flower', placesSearchCB); 
+
+// 키워드 검색 완료 시 호출되는 콜백함수 입니다
+function placesSearchCB (data, status, pagination) {
+    if (status === kakao.maps.services.Status.OK) {
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+        // LatLngBounds 객체에 좌표를 추가합니다
+        var bounds = new kakao.maps.LatLngBounds();
+
+        for (var i=0; i<data.length; i++) {
+            displayMarker(data[i]);    
+            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+        }       
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+        map.setBounds(bounds);
+    } 
+}
+
+// 지도에 마커를 표시하는 함수입니다
+function displayMarker(place) {
+    
+    // 마커를 생성하고 지도에 표시합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: new kakao.maps.LatLng(place.y, place.x) 
+    });
+
+    // 마커에 클릭이벤트를 등록합니다
+    kakao.maps.event.addListener(marker, 'click', function() {
+        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infowindow.open(map, marker);
+    });
+}
+</script>
+
+
+<div id="info" style="text-align:center;">
+
+    <h1>Pink Tulip</h1>
+    <h3>affection and consideration</h3></div>
+
+<br><br>
+<div id="pic2" style="width:18%;height:200px;float:left;margin-left:50px;margin-bottom:20px;">
+    <img src="https://i.pinimg.com/236x/f5/19/8d/f5198dca8dc9afbbf9b70adb02372aee.jpg"></div>
+<div id="pic3" style="width:18%;height:200px;float:left;margin-left:5px;margin-bottom:20px;">
+    <img src="https://i.pinimg.com/236x/14/df/d8/14dfd869e5fc5b2a6742d191a9790c3d.jpg"></div>   
+<div id="pic4" style="width:18%;height:200px;float:left;margin-left:5px;margin-bottom: 20px;">
+    <img src="https://i.pinimg.com/236x/a0/2c/79/a02c794f1f852bd66a9b833564c94669.jpg"></div>
+<div id="pic5" style="width:18%;height:200px;float:left;margin-left:5px;margin-bottom: 20px;">
+    <img src="https://i.pinimg.com/236x/39/5a/cb/395acb3cd86c088f22da34e459566564.jpg"></div>
+<div id="pic6" style="width:18%;height:200px;float:left;margin-left:5px;margin-bottom: 20px;">
+    <img src="https://i.pinimg.com/236x/9b/c1/d5/9bc1d5d244ca01b2f8c1f9c31e5275da.jpg"></div>
+<br><br>
+</body>
+</html>
