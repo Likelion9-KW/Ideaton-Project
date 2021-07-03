@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+		<meta charset="utf-8">
+        <title>예약 및 구매</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+		<div style="text-align: center;">
+			<form action="전송받을 대상">
+				<b>꽃집 검색</b> : <textarea clos="100" rows="2"></textarea>
+				<input type="submit" value="검색">
+			</form>
+		</div>
+        <div class="board_list_wrap">
+			<select>
+				<option value="star">별점순</option>
+				<option value="review">리뷰순</option>
+				<option value="distance">거리순</option>
+			</select>
+
+            <table class="board_list">
+                <caption>예약 및 구매</caption>
+
+                </thead>
+                <tbody>
+                    <tr>
+						<td><img src="logo1.PNG"></td>
+                        <td class="tit">
+                    		<a href="#"><b>꽃집아가씨</b></a>
+                        </td>
+                        <td>별점 4.3</td>
+                        <td>리뷰 100+</td>
+                        <td>리뷰 이벤트 진행 중!</td>
+                    </tr>
+                    <tr>
+						<td><img src="logo2.PNG"></td>
+                        <td class="tit">
+                            <a href="#"><b>DOGWOOD 꽃집</b></a>
+                        </td>
+                        <td>별점 3.9</td>
+                        <td>리뷰 53</td>
+                        <td>배달비 할인!</td>
+                    </tr>
+                    <tr>
+						<td><img src="logo3.PNG"></td>
+                        <td class="tit">
+                            <a href="#"><b>URBAN FLOWER</b></a>
+                        </td>
+                        <td>별점 4.0</td>
+                        <td>리뷰 90</td>
+                        <td>개업 이벤트 진행 중!</td>
+                    </tr>
+                    <tr>
+						<td><img src="logo4.PNG"></td>
+                        <td class="tit">
+                            <a href="#"><b>이달의 꽃집</b></a>
+                        </td>
+                        <td>별점 3.33</td>
+                        <td>리뷰 33</td>
+                        <td>할인 쿠폰 증정!</td>
+                    </tr>
+                    <tr>
+						<td><img src="logo5.PNG"></td>
+                        <td class="tit">
+                            <a href="#"><b>풀잎 꽃잎 목동점</b></a>
+                        </td>
+                        <td>별점 4.2</td>
+                        <td>리뷰 78</td>
+                        <td>할인 쿠폰 증정!</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paging">
+                <a href="#" class="bt">첫 페이지</a>
+                <a href="#" class="bt">이전 페이지</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="bt">다음 페이지</a>
+                <a href="#" class="bt">마지막 페이지</a>
+            </div>
+        </div>
+		<!--<div class="user_wrap">
+			<h3>사용자 정보</h3>
+			<br>
+			<h4>당신을 위한 추천 꽃</h4><br>
+			<br><p><image src="flower1.jpg"></image><b>복숭아 꽃</b> "사랑의 노예"</p>
+			<br><p><image src="flower2.PNG"></image><b>튤립</b> "사랑의 고백"</p>
+			<br><p><image src="flower3.PNG"></image><b>달리아</b> "당신의 사랑이 나를 아름답게 해요"</p>
+			<br><p><image src="flower4.PNG"></image><b>안개꽃</b> "사랑의 결실"</p>
+		</div>-->
+        <div class="board_list_wrap">
+            <table class="board_list">
+                <caption>꽃집 정보</caption>
+                <thead>
+                    <div style="text-align: center;">
+                        <h1>꽃집아가씨</h1>
+                        <br><h3>별점 4.3 | 최근 리뷰 120 | 최근 사장님 댓글 89</h3>
+                        <br><h3>전화 | 찜 330 | 공유</h3><br>
+                    </div>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><image src="bouquet1.jpg"></image></td>
+                        <td class="tit">
+                            <a href="#"><b>추천 꽃 조합 꽃다발 세트</b>
+                            <br><br>추천 꽃+사장님 임의 조합</a>
+                        </td>
+                        <td>20,000원</td>
+                        <td><input type="checkbox" name="check" value="select1" checked></td>
+                        <td>
+                            <form action="전송받을 대상">
+                            갯수 : <textarea rows="2"></textarea>
+                            <input type="submit" value="제출">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><image src="bouquet2.jpg"></image></td>
+                        <td class="tit">
+                            <a href="#"><b>추천 꽃 조합 한 송이 세트</b>
+                            <br><br>추천 꽃 한 송이씩</a>
+                        </td>
+                        <td>10,000원</td>
+                        <td><input type="checkbox" name="check" value="select1" checked></td>
+                        <td>
+                            <form action="전송받을 대상">
+                            갯수 : <textarea rows="2"></textarea>
+                            <input type="submit" value="제출">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><image src="bouquet3.jpg"></image></td>
+                        <td class="tit">
+                            <a href="#"><b>선택 색 조합 꽃다발 세트</b>
+                            <br><br>선택 색 꽃 조합 사장님 임의 꽃다발 세트</a>
+                        </td>
+                        <td>20,000원</td>
+                        <td><input type="checkbox" name="check" value="select1" checked></td>
+                        <td>
+                            <form action="전송받을 대상">
+                            갯수 : <textarea rows="2"></textarea>
+                            <input type="submit" value="제출">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><image src="bouquet4.jpg"></image></td>
+                        <td class="tit">
+                            <a href="#"><b>사장님 추천 요청사항 꽃다발 세트</b>
+                            <br><br>고객님 요청사항에 따른 사장님 추천 꽃다발 세트</a>
+                        </td>
+                        <td>20,000원</td>
+                        <td><input type="checkbox" name="check" value="select1" checked></td>
+                        <td>
+                            <form action="전송받을 대상">
+                            갯수 : <textarea rows="2"></textarea>
+                            <input type="submit" value="제출">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><image src="bouquet5.png"></image></td>
+                        <td class="tit">
+                            <a href="#"><b>한 송이 포장</b>
+                            <br><br>요청사항에 따른 한 송이 포장</a>
+                        </td>
+                        <td>3,000원</td>
+                        <td><input type="checkbox" name="check" value="select1" checked></td>
+                        <td>
+                            <form action="전송받을 대상">
+                            갯수 : <textarea rows="2"></textarea>
+                            <input type="submit" value="제출">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="board_list_wrap">
+            <table class="board_list">
+                <caption>구매 및 예약 정보</caption>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td><b>추천 꽃 선택</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            추천 꽃1 포함
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            추천 꽃2 포함
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            추천 꽃3 포함
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            추천 꽃4 포함
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>꽃다발 크기</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            가로 약 30cm, 높이 약 30cm (가로높이 포장지 끝선기준)
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            가로 약 40cm, 높이 약 40cm (가로높이 포장지 끝선기준) | + 10,000원
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            가로 약 50cm, 높이 약 50cm (가로높이 포장지 끝선기준) | + 10,000원
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            요청사항에 기재
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>포장지 색상</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            연분홍색
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            연보라색
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            흰색+갈색
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            사장님 추천
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            요청사항에 기재
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>요청사항</b></td>
+                        <td>
+                            <textarea clos="100" rows="10"></textarea>
+				            <input type="submit" value="제출">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>픽업 방식</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            배달(문 앞 까지 꽃이 배달됩니다.)
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            포장(직접 가져가실 수 있게 준비됩니다.)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>배달 정보 입력</b></td>
+                        <td>
+                            <textarea clos="100" rows="10"></textarea>
+				            <input type="submit" value="제출">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>할인 쿠폰</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            배달비 할인 쿠폰
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            개업 이벤트 10% 할인 쿠폰
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>결제 수단</b></td>
+                        <td>
+                            <input type="checkbox" name="check" value="select1" checked>
+                            신용/체크 카드
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            카카오페이
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            휴대폰 결제
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            만나서 카드 결제
+                            <br><input type="checkbox" name="check" value="select1" checked>
+                            만나서 현금 결제
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>결제 금액</b></td>
+                        <td>주문금액 15,000원</td>
+                        <td>배달팁 2,000원</td>
+                        <td><b>총 결제 금액 17,000원</b> <input type="submit" value="결제하기"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
