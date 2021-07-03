@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'review.apps.ReviewConfig',
+    'register.apps.RegisterConfig',
+    'recommend.apps.RecommendConfig',
 ]
 
 MIDDLEWARE = [

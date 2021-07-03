@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .slide {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide li {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .slide li:nth-child(1) {
+            background: rgb(223, 223, 223);
+        }
+
+        .slide li:nth-child(2) {
+            background:rgb(223, 223, 223);
+        }
+
+        .slide li:nth-child(3) {
+            background: rgb(223, 223, 223);
+        }
+
+        .slide li:nth-child(4) {
+            background: rgb(223, 223, 223);
+        }
+
+        .slide input {
+            display: none;
+        }
+
+        .slide .bullet {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .slide .bullet label {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 2px solid #666;
+            display: inline-block;
+            background: #fff;
+            font-size: 0;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        /* 슬라이드 조작 */
+        #pos1:checked~ul li:nth-child(1),
+        #pos2:checked~ul li:nth-child(2),
+        #pos3:checked~ul li:nth-child(3),
+        #pos4:checked~ul li:nth-child(4) {
+            opacity: 1;
+        }
+
+        /* bullet 조작 */
+        #pos1:checked~.bullet label:nth-child(1),
+        #pos2:checked~.bullet label:nth-child(2),
+        #pos3:checked~.bullet label:nth-child(3),
+        #pos4:checked~.bullet label:nth-child(4) {
+            background: #666;
+        }
+        body{
+            display: flex;
+            justify-content: space-around;
+              text-align: center;
+        }
+        #leftside{
+               display: flex;
+               flex-direction: column;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="leftside">
+        <h1>꽃</h1>
+        <p>기분 좋음</p>
+        <input type="submit" value="꽃 사러가기">
+      
+
+    </div>
+    <div class="slide" style="width: 400px;height: 500px;">
+        <input type="radio" name="pos" id="pos1" checked>
+        <input type="radio" name="pos" id="pos2">
+        <input type="radio" name="pos" id="pos3">
+        <input type="radio" name="pos" id="pos4">
+        <ul >
+            <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+                    <h1>현호색</h1>
+                    <div >
+                    <img src="현호색.jpeg" alt="" width="200" height="200">
+                    <h2>"희소식"</h2>
+            </div>
+            </li>
+<li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+    <h1>노랑무늬붓꽃</h1>
+    <div>
+        <img src="노랑무늬붓꽃.jpeg" alt="" width="200" height="200">
+        <h2>"절제된 아름다움"</h2>
+    </div>
+</li>           
+<li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+    <h1>물망초</h1>
+    <div>
+        <img src="물망초.jpeg" alt="" width="200" height="200">
+        <h2>"진실한 사랑, 나를 잊지 마세요."</h2>
+    </div>
+</li>
+        <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+            <h1>포인세티아</h1>
+            <div>
+                <img src="포인세티아.jpeg" alt="" width="200" height="200">
+                <h2>"축복, 나의 마음은 불타고 있습니다."</h2>
+            </div>
+        </li>
+        </ul>
+        <p class="bullet">
+            <label for="pos1">1</label>
+            <label for="pos2">2</label>
+            <label for="pos3">3</label>
+            <label for="pos4">4</label>
+        </p>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="flower.css">
+
+</head>
+<body>
+        <p><code>wrapAround: true</code></p>
+
+    <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+    </div>
+</body>
+</html> -->
