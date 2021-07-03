@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가게 상세 정보 페이지</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <style>
+        .inner-star::before{color: #FF9600; font-size: large;}
+        .outer-star {position: relative;display: inline-block;color: #CCCCCC; font-size: large;}
+        .inner-star {position: absolute;left: 0;top: 0;width: 0%;overflow: hidden;white-space: nowrap;}
+        .outer-star::before, .inner-star::before {content: '\f005 \f005 \f005 \f005 \f005';font-family: 'Font Awesome 5 free';font-weight: 900;}
+    </style>
+</head>
+<body>
+        <ul class="nav nav-tabs nav-pills nav-fill justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="true">상세정보</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">리뷰 12</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="qna-tab" data-bs-toggle="tab" data-bs-target="#qna" type="button" role="tab" aria-controls="qna" aria-selected="false">Q&A 3</button>
+        </li>
+      </ul>
+        <div>
+            <div class='RatingStar'>
+                <div class='RatingScore'>
+                    <div class='outer-star'>
+                      <div class='inner-star'></div>
+                      <div class="numberRating"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="detail" role="tabpanel" aria-labelledby="detail-tab">
+
+            <div id="flower-shop-info" style="display: flex; flex-direction: column;">
+                <span id="flower-shop-name">꽃집 이름</span>
+                <span id="flower-shop-img">
+                    <img src="#" alt="꽃집 이미지">
+                </span>
+                <span id="flower-shop-map">꽃집 지도 위치</span>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+            <div class="review-box" style="border-radius: 5px; border: 1px black solid">
+                <div class="user-info" style="display: flex;">
+                    <img class="profile-img" src="#" alt="프로필 이미지" />
+                    <span class="review-user">mosang1230</span>
+                </div>
+                <div class='RatingStar'>
+                    <div class='ReviewScore'>
+                        <div class='outer-star'>
+                          <div class='inner-star'></div>
+                          <div class="numberRating"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="review-contents-box">
+                    <span class="review-date">Date: 2021/07/01</span>
+                    <span class="purchase-item">꽃 이름</span> <br>
+                    <span class="review">최고에요</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="qna-tab">
+            <div>
+                <div class="qna-box" style="border-radius: 5px; border: 1px black solid">
+                    <div class="user-info" style="display: flex;">
+                        <img class="profile-img" src="#" alt="프로필 이미지" />
+                        <span class="review-user">mosang1230</span>
+                    </div>
+                    <div class="qna-contents-box">
+                        <span class="qna-date">Date: 2021/07/01</span> <br>
+                        <span class="question">위치가 정확히 어디인가요?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <script>
+        ratings = {RatingScore: 4.5, ReviewScore: 3.0}; 
+        totalRating = 5;
+        // table = document.querySelector('.RatingStar');
+        function rateIt() {
+            for (rating in ratings) {
+                console.log(rating)
+                // 별 평점 백분위 나타내기 
+                ratingPercentage = ratings[rating] / totalRating * 100;
+                // 십의 자리까지 반올림 
+                ratingRounded = Math.round(ratingPercentage / 10) * 10 + '%';
+                // RatingScore 클래스에서 inner-star 클래스 획득
+                star = document.querySelector(`.${rating} .inner-star`);
+                // RatingScore 클래스에서 numberRating 클래스 획득
+                numberRating = document.querySelector(`.${rating} .numberRating`);
+                // inner-star 평점만큼 width 주기
+                star.style.width = ratingRounded;
+                // numberRating
+                numberRating.innerText = ratings[rating];
+            }
+        }
+        rateIt();
+      </script>
+</body>
+</html>
