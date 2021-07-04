@@ -89,10 +89,11 @@
             background: #666;
         }
 
-        body {
+        #main-content {
             display: flex;
             justify-content: space-around;
             text-align: center;
+            margin: 20px;
         }
 
         #leftside {
@@ -101,62 +102,98 @@
             justify-content: space-around;
         }
     </style>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.2/dist/minty/bootstrap.min.css">   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'main' %}">Flower Recommendation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="{% url 'main' %}">Home
+                        <span class="visually-hidden">(current)</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'notice' %}">Notice</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'recom' %}">Recommendation</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'join' %}">Sign Up</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </nav>
     
 </head>
 
 <body>
-    {% load static %}
-    <div id="leftside">
-        <h1>꽃</h1>
-        <p>기분 좋음</p>
-        <form action= "{% url 'order' %}" >
-        <input type="submit" value="꽃 사러가기">
-        </form>
+    <div id="main-content">
+        {% load static %}
+        <div id="leftside">
+            <h1>꽃</h1>
+            <img src="https://i.pinimg.com/originals/a7/58/b7/a758b7924e4cf714c0d6f16b6f740de2.jpg" width=170 height=170>
+            <form action= "{% url 'order' %}" >
+                <button type="submit" class="btn btn-primary">꽃 사러가기</button>
+            </form>
 
 
-    </div>
-    <div class="slide" style="width: 400px;height: 500px;">
-        <input type="radio" name="pos" id="pos1" checked>
-        <input type="radio" name="pos" id="pos2">
-        <input type="radio" name="pos" id="pos3">
-        <input type="radio" name="pos" id="pos4">
-        <ul>
-            <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
-                <h1>현호색</h1>
-                <div>
-                    <img src="{% static '현호색.jpeg'%}" alt="" width="200" height="200">
-                    <h2>"희소식"</h2>
-                </div>
-            </li>
-            <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
-                <h1>노랑무늬붓꽃</h1>
-                <div>
-                    <img src="{% static '노랑무늬붓꽃.jpeg'%}" alt="" width="200" height="200">
-                    <h2>"절제된 아름다움"</h2>
-                </div>
-            </li>
-            <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
-                <h1>물망초</h1>
-                <div>
-                    <img src="{% static '물망초.jpeg'%}" alt="" width="200" height="200">
-                    <h2>"진실한 사랑, 나를 잊지 마세요."</h2>
-                </div>
-            </li>
-            <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
-                <h1>포인세티아</h1>
-                <div>
-                    <img src="{% static '포인세티아.jpeg'%}" alt="" width="200" height="200">
-                    <h2>"축복, 나의 마음은 불타고 있습니다."</h2>
-                </div>
-            </li>
-        </ul>
-        <p class="bullet">
-            <label for="pos1">1</label>
-            <label for="pos2">2</label>
-            <label for="pos3">3</label>
-            <label for="pos4">4</label>
-        </p>
+        </div>
+        <div class="slide" style="width: 400px;height: 500px;">
+            <input type="radio" name="pos" id="pos1" checked>
+            <input type="radio" name="pos" id="pos2">
+            <input type="radio" name="pos" id="pos3">
+            <input type="radio" name="pos" id="pos4">
+            <ul>
+                <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+                    <h1>현호색</h1>
+                    <div>
+                        <img src="{% static '현호색.jpeg'%}" alt="" width="200" height="200">
+                        <h2>"희소식"</h2>
+                    </div>
+                </li>
+                <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+                    <h1>노랑무늬붓꽃</h1>
+                    <div>
+                        <img src="{% static '노랑무늬붓꽃.jpeg'%}" alt="" width="200" height="200">
+                        <h2>"절제된 아름다움"</h2>
+                    </div>
+                </li>
+                <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+                    <h1>물망초</h1>
+                    <div>
+                        <img src="{% static '물망초.jpeg'%}" alt="" width="200" height="200">
+                        <h2>"진실한 사랑, 나를 잊지 마세요."</h2>
+                    </div>
+                </li>
+                <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
+                    <h1>포인세티아</h1>
+                    <div>
+                        <img src="{% static '포인세티아.jpeg'%}" alt="" width="200" height="200">
+                        <h2>"축복, 나의 마음은 불타고 있습니다."</h2>
+                    </div>
+                </li>
+            </ul>
+            <p class="bullet">
+                <label for="pos1">1</label>
+                <label for="pos2">2</label>
+                <label for="pos3">3</label>
+                <label for="pos4">4</label>
+            </p>
+        </div>
     </div>
 </body>
 

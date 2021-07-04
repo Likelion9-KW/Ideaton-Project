@@ -20,7 +20,7 @@
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Flower Recommendation</a>
+          <a class="navbar-brand" href="{% url 'main' %}">Flower Recommendation</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,7 +28,7 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                       <li class="nav-item">
-                        <a class="nav-link active" href="#">Home
+                        <a class="nav-link active" href="{% url 'main' %}">Home
                           <span class="visually-hidden">(current)</span>
                         </a>
                       </li>
@@ -55,17 +55,17 @@
 </head>
 <body>
     {% load static %}
-        <ul class="nav nav-tabs nav-pills nav-fill justify-content-center" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="true">상세정보</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">리뷰 12</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="qna-tab" data-bs-toggle="tab" data-bs-target="#qna" type="button" role="tab" aria-controls="qna" aria-selected="false">Q&A 3</button>
-        </li>
-      </ul>
+        <ul class="nav nav-tabs nav-pills nav-fill justify-content-center" id="myTab" role="tablist" style="margin-top: 10px; margin-inline: 20px;">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="true">상세정보</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false">리뷰 12</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="qna-tab" data-bs-toggle="tab" data-bs-target="#qna" type="button" role="tab" aria-controls="qna" aria-selected="false">Q&A 3</button>
+          </li>
+        </ul>
         <div>
             <div class='RatingStar' style="text-align: center;">
                 <div class='RatingScore' style="display: flex; flex-direction: column; align-items: center;">
@@ -77,18 +77,57 @@
             </div>
         </div>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="detail" role="tabpanel" aria-labelledby="detail-tab">
-
-            <div id="flower-shop-info" style="display: flex; flex-direction: column; align-items: center;">
-                <span id="flower-shop-name" style="margin: 20px;">아뜰리에베르베르</span> <br>
-                <span id="flower-shop-img" style="margin: 10px;">
-                    <img src="{% static 'flower_shop.jpg'%}" alt="꽃집 이미지" width="500px">
+        <div class="tab-pane fade show active" id="detail" role="tabpanel" aria-labelledby="detail-tab" style="text-align: center;">
+          
+          <span id="flower-shop-name" style="margin-bottom: 50px;">꽃집아가씨</span> <br>
+            <div id="flower-shop-info" style="display: flex; flex-direction: row; justify-content: center;">
+                <span id="flower-shop-img" style="margin: 100px; width: 600px;">
+                    <img src="{% static 'flower_shop.png' %}" alt="꽃집 이미지" >
                 </span>
-                <div id="map" style="width:45%;height:400px;float:right;margin-right:20px;"></div>
+                <div id="map" style="width:30%; height:500px; float:right;margin: 100px;"></div>
             </div>
         </div>
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-            <div class="review-box" style="border-radius: 5px; border: 1px black solid">
+          <div style="display: flex; flex-direction: row;">
+            <div class="review-box" style="border-radius: 5px; border: 1px black solid; margin: 50px; width: 250px;">
+                <div class="user-info" style="display: flex;">
+                    <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
+                    <span class="review-user">mosang1230</span>
+                </div>
+                <div class='RatingStar'>
+                    <div class='ReviewScore'>
+                        <div class='outer-star'>
+                          <div class='inner-star'></div>
+                          <div class="numberRating"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="review-contents-box">
+                    <span class="review-date">Date: 2021/07/01</span>
+                    <span class="purchase-item">꽃 이름</span> <br>
+                    <span class="review">최고에요</span>
+                </div>
+              </div>
+              <div class="review-box" style="border-radius: 5px; border: 1px black solid; margin: 50px; width: 250px;">
+                <div class="user-info" style="display: flex;">
+                    <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
+                    <span class="review-user">mosang1230</span>
+                </div>
+                <div class='RatingStar'>
+                    <div class='ReviewScore'>
+                        <div class='outer-star'>
+                          <div class='inner-star'></div>
+                          <div class="numberRating"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="review-contents-box">
+                    <span class="review-date">Date: 2021/07/01</span>
+                    <span class="purchase-item">꽃 이름</span> <br>
+                    <span class="review">최고에요</span>
+                </div>
+              </div>
+              <div class="review-box" style="border-radius: 5px; border: 1px black solid; margin: 50px; width: 250px;">
                 <div class="user-info" style="display: flex;">
                     <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
                     <span class="review-user">mosang1230</span>
@@ -107,19 +146,40 @@
                     <span class="review">최고에요</span>
                 </div>
             </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="qna" role="tabpanel" aria-labelledby="qna-tab">
             <div>
-                <div class="qna-box" style="border-radius: 5px; border: 1px black solid">
+                <div class="qna-box" style="border-radius: 5px; border: 1px black solid; margin-inline: 100px; margin-top: 20px;">
                     <div class="user-info" style="display: flex;">
                         <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
                         <span class="review-user">mosang1230</span>
                     </div>
                     <div class="qna-contents-box">
-                        <span class="qna-date">Date: 2021/07/01</span> <br>
-                        <span class="question">위치가 정확히 어디인가요?</span>
+                        <span class="qna-date">Date: 2021/07/01</span> 
+                        <h5><span class="question"><strong> Question: 위치가 정확히 어디인가요?</strong></span></h5>
                     </div>
                 </div>
+                <div class="qna-box" style="border-radius: 5px; border: 1px black solid; margin-inline: 100px; margin-top: 20px;">
+                  <div class="user-info" style="display: flex;">
+                      <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
+                      <span class="review-user">mosang1230</span>
+                  </div>
+                  <div class="qna-contents-box">
+                      <span class="qna-date">Date: 2021/07/01</span> 
+                      <h5><span class="question"><strong> Question: 위치가 정확히 어디인가요?</strong></span></h5>
+                  </div>
+              </div>
+              <div class="qna-box" style="border-radius: 5px; border: 1px black solid; margin-inline: 100px; margin-top: 20px;">
+                <div class="user-info" style="display: flex;">
+                    <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
+                    <span class="review-user">mosang1230</span>
+                </div>
+                <div class="qna-contents-box">
+                    <span class="qna-date">Date: 2021/07/01</span> 
+                    <h5><span class="question"><strong> Question: 위치가 정확히 어디인가요?</strong></span></h5>
+                </div>
+            </div>
             </div>
         </div>
       </div>
@@ -148,47 +208,27 @@
       </script>
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf58464a972fefa107b2cdd6a1440c6&libraries=services"></script>
       <script>
-        var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(37.5978379,126.9457346), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
         
-        var mapContainer = document.getElementById('map'), 
-            mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567), 
-                level: 3 
-            };  
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         
-        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        // 마커가 표시될 위치입니다 
+        var markerPosition  = new kakao.maps.LatLng(37.5978379,126.9457346); 
         
-        var ps = new kakao.maps.services.Places(); 
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
         
-        // ps.keywordSearch('flower', placesSearchCB); 
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
         
-        function placesSearchCB (data, status, pagination) {
-            if (status === kakao.maps.services.Status.OK) {
-        
-        
-                var bounds = new kakao.maps.LatLngBounds();
-        
-                for (var i=0; i<data.length; i++) {
-                    displayMarker(data[i]);    
-                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-                }       
-        
-                map.setBounds(bounds);
-            } 
-        }
-        
-        function displayMarker(place) {
-            
-            var marker = new kakao.maps.Marker({
-                map: map,
-                position: new kakao.maps.LatLng(place.y, place.x) 
-            });
-        
-            kakao.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-                infowindow.open(map, marker);
-            });
-        }
-      </script>
+        // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+        // marker.setMap(null);    
+        </script>
 </body>
 </html>

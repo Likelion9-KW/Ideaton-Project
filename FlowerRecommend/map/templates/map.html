@@ -46,54 +46,36 @@
 <div id="map" style="width:45%;height:400px;float:right;margin-right:20px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf58464a972fefa107b2cdd6a1440c6&libraries=services"></script>
 <script>
-var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-var mapContainer = document.getElementById('map'), 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), 
-        level: 3 
-    };  
-
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-var ps = new kakao.maps.services.Places(); 
-
-ps.keywordSearch('flower', placesSearchCB); 
-
-function placesSearchCB (data, status, pagination) {
-    if (status === kakao.maps.services.Status.OK) {
-
-
-        var bounds = new kakao.maps.LatLngBounds();
-
-        for (var i=0; i<data.length; i++) {
-            displayMarker(data[i]);    
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-        }       
-
-        map.setBounds(bounds);
-    } 
-}
-
-function displayMarker(place) {
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.5978379,126.9457346), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
     
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    
+    // 마커가 표시될 위치입니다 
+    var markerPosition  = new kakao.maps.LatLng(37.5978379,126.9457346); 
+    
+    // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(place.y, place.x) 
+        position: markerPosition
     });
+    
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+    
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);    
+    </script>
 
-    kakao.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-        infowindow.open(map, marker);
-    });
-}
-</script>
 
-
-<div id="info" style="text-align:center;">
+<div id="info" style="margin-left:50px;">
 
     <h1>Pink Tulip</h1>
-    <h3><a href="{% url 'review' %}">affection and consideration</a> </h3></div>
+    <h3><a href="{% url 'review' %}">affection and consideration</a> </h3>
+    <a href="{% url 'review' %}"><button type="button" class="btn btn-primary">상세정보로 이동</button></a>
+</div>
 
 <br><br>
 <div id="pic2" style="width:18%;height:200px;float:left;margin-left:50px;margin-bottom:20px;">

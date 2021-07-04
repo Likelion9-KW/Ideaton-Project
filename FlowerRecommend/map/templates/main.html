@@ -33,7 +33,7 @@ ul {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.2/dist/minty/bootstrap.min.css">   
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Flower Recommendation</a>
+    <a class="navbar-brand" href="{% url 'main' %}">Flower Recommendation</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +41,7 @@ ul {
     <div class="collapse navbar-collapse" id="navbarColor01">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home
+                  <a class="nav-link active" href="{% url 'main' %}">Home
                     <span class="visually-hidden">(current)</span>
                   </a>
                 </li>
@@ -71,7 +71,7 @@ ul {
     <br><br><br><br><br>
     <table style="margin-left: auto; margin-right: auto;" border: none; background: none; padding: 0;>
       <tr>
-          <td><button type="button"><img src="https://i.pinimg.com/originals/a7/58/b7/a758b7924e4cf714c0d6f16b6f740de2.jpg" width=170 height=170></button></td>
+          <td><a href="{% url 'recom' %}"><button type="button"><img src="https://i.pinimg.com/originals/a7/58/b7/a758b7924e4cf714c0d6f16b6f740de2.jpg" width=170 height=170></button></a></td>
           <td><button type="button"><img src="https://i.pinimg.com/236x/a1/6f/55/a16f553b9e42af0bf85e22c0676f6fd3.jpg"width=170 height=170></button></td>
           <td><img src="https://i.pinimg.com/236x/12/78/12/127812da72655b045c24a2fda7f0c6ac.jpg"width=170 height=170></td>
           <td><button type="button"><img src="https://i.pinimg.com/236x/fc/8b/64/fc8b6423582edd8633ec9e6d15ef0220.jpg"width=170 height=170></button></td>
