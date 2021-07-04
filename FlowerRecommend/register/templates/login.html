@@ -11,6 +11,41 @@
 }
 
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.2/dist/minty/bootstrap.min.css">   
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Flower Recommendation</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home
+                    <span class="visually-hidden">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'notice' %}">Notice</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'recom' %}">Recommendation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'join' %}">Sign Up</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
 </head>
 <body>
     
@@ -23,29 +58,34 @@
         <br>
         
 
-    <h1>로그인</h1>
+    <h1>Login</h1>
     <div class="loginid">
                 <br>
                 <br>
-                <br>
 
-    <h2 style="display:inline">아이디&nbsp&nbsp&nbsp&nbsp</h2>
-    <input type="email" name="id" id="id" placeholder="아이디를 입력하세요" style="width: 200px;height: 30px;">
+
+    <h2 style="display:inline">ID&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
+    <input type="email" name="id" id="id" placeholder="아이디를 입력하세요!" style="width: 230px;height: 30px;">
     </div>
     <br>
     <br>
 
     <div class="password">
-    <h2 style="display:inline">비밀번호&nbsp</h2>
-    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요"style="width: 200px;height: 30px;">
-        <br>
+    <h2 style="display:inline">PW&nbsp&nbsp</h2>
+    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요!"style="width: 230px;height: 30px;">
+
     <br>
 <br>
     <div class="remember">
-    <input type="checkbox" name="" id=""> 아이디 저장
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            아이디 저장
+        </label>
+ 
     </div>
                 <br>                         
-                <form action="{% url 'main' %}"><input type="submit" value="로그인"></form>   
+                <form action="{% url 'main' %}"><button type="submit" class="btn btn-primary">로그인</button></form>   
+                
 
 </div>
 
