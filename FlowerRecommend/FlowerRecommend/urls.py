@@ -31,7 +31,6 @@ urlpatterns = [
     path('notice/', home_view.home, name="notice"),
     path('order/', order_view.order, name="order"),
     path('recom-flower/', recommend_view.recom, name="recom"),
-
     path('login/', register_view.login, name="login"),
     path('join/', register_view.join, name="join"),
     path('review/', review_view.review, name="review"),
