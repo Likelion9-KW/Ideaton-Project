@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+    {% load static %}
         <ul class="nav nav-tabs nav-pills nav-fill justify-content-center" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab" aria-controls="detail" aria-selected="true">상세정보</button>
@@ -47,7 +48,7 @@
             <div id="flower-shop-info" style="display: flex; flex-direction: column; align-items: center;">
                 <span id="flower-shop-name" style="margin: 20px;">아뜰리에베르베르</span> <br>
                 <span id="flower-shop-img" style="margin: 10px;">
-                    <img src="./flower_shop.jpg" alt="꽃집 이미지" width="500px">
+                    <img src="{% static 'flower_shop.jpg'%}./" alt="꽃집 이미지" width="500px">
                 </span>
                 <div id="map" style="width:45%;height:400px;float:right;margin-right:20px;"></div>
             </div>
@@ -55,7 +56,7 @@
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-box" style="border-radius: 5px; border: 1px black solid">
                 <div class="user-info" style="display: flex;">
-                    <img class="profile-img" src="#" alt="프로필 이미지" />
+                    <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
                     <span class="review-user">mosang1230</span>
                 </div>
                 <div class='RatingStar'>
@@ -77,7 +78,7 @@
             <div>
                 <div class="qna-box" style="border-radius: 5px; border: 1px black solid">
                     <div class="user-info" style="display: flex;">
-                        <img class="profile-img" src="#" alt="프로필 이미지" />
+                        <img class="profile-img" src="{% static 'profile.PNG'%}" alt="프로필 이미지" width="100" height="100"/>
                         <span class="review-user">mosang1230</span>
                     </div>
                     <div class="qna-contents-box">

@@ -103,6 +103,7 @@
 </head>
 
 <body>
+    {% load static %}
     <div id="leftside">
         <h1>꽃</h1>
         <p>기분 좋음</p>
@@ -121,28 +122,28 @@
             <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
                 <h1>현호색</h1>
                 <div>
-                    <img src="현호색.jpeg" alt="" width="200" height="200">
+                    <img src="{% static '현호색.jpeg'%}" alt="" width="200" height="200">
                     <h2>"희소식"</h2>
                 </div>
             </li>
             <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
                 <h1>노랑무늬붓꽃</h1>
                 <div>
-                    <img src="노랑무늬붓꽃.jpeg" alt="" width="200" height="200">
+                    <img src="{% static '노랑무늬붓꽃.jpeg'%}" alt="" width="200" height="200">
                     <h2>"절제된 아름다움"</h2>
                 </div>
             </li>
             <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
                 <h1>물망초</h1>
                 <div>
-                    <img src="물망초.jpeg" alt="" width="200" height="200">
+                    <img src="{% static '물망초.jpeg'%}" alt="" width="200" height="200">
                     <h2>"진실한 사랑, 나를 잊지 마세요."</h2>
                 </div>
             </li>
             <li style="display: flex;flex-direction: column;justify-content:space-evenly;">
                 <h1>포인세티아</h1>
                 <div>
-                    <img src="포인세티아.jpeg" alt="" width="200" height="200">
+                    <img src="{% static '포인세티아.jpeg'%}" alt="" width="200" height="200">
                     <h2>"축복, 나의 마음은 불타고 있습니다."</h2>
                 </div>
             </li>
