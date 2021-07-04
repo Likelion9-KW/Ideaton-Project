@@ -41,10 +41,10 @@ ul {
 <head>
     <nav>
         <ul>
-            <li>|       Delivery        |</li>
-            <li>| <a href="recom-flower/" style="display: inline;">Recommendation</a>     |</li>
-            <li>| <a href="login/" style="display: inline;">Login</a>       |</li>
-            <li>| <a href="join/" style="display: inline;">Sign Up</a>     |</li>
+            <li>| <a href="{% url 'notice' %}" style="display: inline;">Notice</a>        |</li>
+            <li>| <a href="{% url 'recom' %}" style="display: inline;">Recommendation</a>     |</li>
+            <li>| <a href="{% url 'login' %}" style="display: inline;">Login</a>       |</li>
+            <li>| <a href="{% url 'join' %}" style="display: inline;">Sign Up</a>     |</li>
         </ul>
     </nav>
 

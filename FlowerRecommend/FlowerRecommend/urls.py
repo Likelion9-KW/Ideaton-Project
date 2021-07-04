@@ -27,8 +27,8 @@ from review import views as review_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', map_view.main, name="main"),
-    path('recom-flower/recom-store/', map_view.map, name="recom-flower"),
-    path('notice/', home_view.home, name="home"),
+    path('recom-flower/recom-store/', map_view.map, name="recom-store"),
+    path('notice/', home_view.home, name="notice"),
     path('order/', order_view.order, name="order"),
     path('recom-flower/', recommend_view.recom, name="recom"),
 
