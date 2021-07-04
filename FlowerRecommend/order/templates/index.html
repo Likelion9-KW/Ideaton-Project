@@ -101,6 +101,7 @@ a {
         </style>
     </head>
     <body>
+        {% load static %}
 		<div style="text-align: center;">
 			<form action="전송받을 대상">
 				<b>꽃집 검색</b> : <textarea clos="100" rows="2"></textarea>
@@ -120,7 +121,7 @@ a {
                 </thead>
                 <tbody>
                     <tr>
-						<td><img src="logo1.PNG"></td>
+						<td><img src="{% static 'logo1.PNG'%}"></td>
                         <td class="tit">
                     		<a href="#"><b>꽃집아가씨</b></a>
                         </td>
@@ -129,7 +130,7 @@ a {
                         <td>리뷰 이벤트 진행 중!</td>
                     </tr>
                     <tr>
-						<td><img src="logo2.PNG"></td>
+						<td><img src="{% static 'logo2.PNG'%}"></td>
                         <td class="tit">
                             <a href="#"><b>DOGWOOD 꽃집</b></a>
                         </td>
@@ -138,7 +139,7 @@ a {
                         <td>배달비 할인!</td>
                     </tr>
                     <tr>
-						<td><img src="logo3.PNG"></td>
+						<td><img src="{% static 'logo3.PNG'%}"></td>
                         <td class="tit">
                             <a href="#"><b>URBAN FLOWER</b></a>
                         </td>
@@ -147,7 +148,7 @@ a {
                         <td>개업 이벤트 진행 중!</td>
                     </tr>
                     <tr>
-						<td><img src="logo4.PNG"></td>
+						<td><img src="{% static 'logo4.PNG'%}"></td>
                         <td class="tit">
                             <a href="#"><b>이달의 꽃집</b></a>
                         </td>
@@ -156,7 +157,7 @@ a {
                         <td>할인 쿠폰 증정!</td>
                     </tr>
                     <tr>
-						<td><img src="logo5.PNG"></td>
+						<td><img src="{% static 'logo5.PNG'%}"></td>
                         <td class="tit">
                             <a href="#"><b>풀잎 꽃잎 목동점</b></a>
                         </td>
@@ -197,7 +198,7 @@ a {
                 </thead>
                 <tbody>
                     <tr>
-                        <td><image src="bouquet1.jpg"></image></td>
+                        <td><image src="{% static 'bouquet1.jpg'%}"></image></td>
                         <td class="tit">
                             <a href="#"><b>추천 꽃 조합 꽃다발 세트</b>
                             <br><br>추천 꽃+사장님 임의 조합</a>
@@ -212,7 +213,7 @@ a {
                         </td>
                     </tr>
                     <tr>
-                        <td><image src="bouquet2.jpg"></image></td>
+                        <td><image src="{% static 'bouquet2.jpg'%}"></image></td>
                         <td class="tit">
                             <a href="#"><b>추천 꽃 조합 한 송이 세트</b>
                             <br><br>추천 꽃 한 송이씩</a>
@@ -227,7 +228,7 @@ a {
                         </td>
                     </tr>
                     <tr>
-                        <td><image src="bouquet3.jpg"></image></td>
+                        <td><image src="{% static 'bouquet3.jpg'%}"></image></td>
                         <td class="tit">
                             <a href="#"><b>선택 색 조합 꽃다발 세트</b>
                             <br><br>선택 색 꽃 조합 사장님 임의 꽃다발 세트</a>
@@ -242,7 +243,7 @@ a {
                         </td>
                     </tr>
                     <tr>
-                        <td><image src="bouquet4.jpg"></image></td>
+                        <td><image src="{% static 'bouquet4.jpg'%}"></image></td>
                         <td class="tit">
                             <a href="#"><b>사장님 추천 요청사항 꽃다발 세트</b>
                             <br><br>고객님 요청사항에 따른 사장님 추천 꽃다발 세트</a>
@@ -257,7 +258,7 @@ a {
                         </td>
                     </tr>
                     <tr>
-                        <td><image src="bouquet5.png"></image></td>
+                        <td><image src="{% static 'bouquet5.png'%}"></image></td>
                         <td class="tit">
                             <a href="#"><b>한 송이 포장</b>
                             <br><br>요청사항에 따른 한 송이 포장</a>
