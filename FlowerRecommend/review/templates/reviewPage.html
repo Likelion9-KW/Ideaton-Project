@@ -11,10 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
     <style>
-        .inner-star::before{color: #FF9600; font-size: large;}
-        .outer-star {position: relative;display: inline-block;color: #CCCCCC; font-size: large;}
+        .inner-star::before{color: #FF9600;}
+        .outer-star {position: relative;display: inline-block;color: #CCCCCC;}
+        #average-inner::before, #average-outer {font-size: xx-large;}
         .inner-star {position: absolute;left: 0;top: 0;width: 0%;overflow: hidden;white-space: nowrap;}
         .outer-star::before, .inner-star::before {content: '\f005 \f005 \f005 \f005 \f005';font-family: 'Font Awesome 5 free';font-weight: 900;}
+        .numberRating {font-family: 'Font Awesome 5 free'; font-weight: 900; color: #CCCCCC;}
     </style>
 </head>
 <body>
@@ -30,24 +32,24 @@
         </li>
       </ul>
         <div>
-            <div class='RatingStar'>
-                <div class='RatingScore'>
-                    <div class='outer-star'>
-                      <div class='inner-star'></div>
-                      <div class="numberRating"></div>
+            <div class='RatingStar' style="text-align: center;">
+                <div class='RatingScore' style="display: flex; flex-direction: column; align-items: center;">
+                    <div class='outer-star' id="average-outer">
+                      <div class='inner-star' id="average-inner"></div>
                     </div>
+                    <div class="numberRating"></div>
                 </div>
             </div>
         </div>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="detail" role="tabpanel" aria-labelledby="detail-tab">
 
-            <div id="flower-shop-info" style="display: flex; flex-direction: column;">
-                <span id="flower-shop-name">꽃집 이름</span>
-                <span id="flower-shop-img">
-                    <img src="#" alt="꽃집 이미지">
+            <div id="flower-shop-info" style="display: flex; flex-direction: column; align-items: center;">
+                <span id="flower-shop-name" style="margin: 20px;">아뜰리에베르베르</span> <br>
+                <span id="flower-shop-img" style="margin: 10px;">
+                    <img src="./flower_shop.jpg" alt="꽃집 이미지" width="500px">
                 </span>
-                <span id="flower-shop-map">꽃집 지도 위치</span>
+                <div id="map" style="width:45%;height:400px;float:right;margin-right:20px;"></div>
             </div>
         </div>
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
@@ -87,7 +89,7 @@
         </div>
       </div>
       <script>
-        ratings = {RatingScore: 4.5, ReviewScore: 3.0}; 
+        ratings = {RatingScore: 3.5, ReviewScore: 3.0}; 
         totalRating = 5;
         // table = document.querySelector('.RatingStar');
         function rateIt() {
@@ -104,10 +106,54 @@
                 // inner-star 평점만큼 width 주기
                 star.style.width = ratingRounded;
                 // numberRating
-                numberRating.innerText = ratings[rating];
+                numberRating.innerText = `${ratings[rating]} / 5 점`;
             }
         }
         rateIt();
+      </script>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcf58464a972fefa107b2cdd6a1440c6&libraries=services"></script>
+      <script>
+        var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+        
+        var mapContainer = document.getElementById('map'), 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), 
+                level: 3 
+            };  
+        
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        
+        var ps = new kakao.maps.services.Places(); 
+        
+        // ps.keywordSearch('flower', placesSearchCB); 
+        
+        function placesSearchCB (data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+        
+        
+                var bounds = new kakao.maps.LatLngBounds();
+        
+                for (var i=0; i<data.length; i++) {
+                    displayMarker(data[i]);    
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }       
+        
+                map.setBounds(bounds);
+            } 
+        }
+        
+        function displayMarker(place) {
+            
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: new kakao.maps.LatLng(place.y, place.x) 
+            });
+        
+            kakao.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                infowindow.open(map, marker);
+            });
+        }
       </script>
 </body>
 </html>
