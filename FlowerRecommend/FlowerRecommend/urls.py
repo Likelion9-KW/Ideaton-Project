@@ -17,8 +17,23 @@ from django.contrib import admin
 from django.urls import path
 
 from map import views as map_view
+from home import views as home_view
+from order import views as order_view
+from recommend import views as recommend_view
+from register import views as register_view
+from review import views as review_view
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', map_view.main, name="main"),
-    path('map/', map_view.map, name="map"),
+    path('', map_view.main, name="main"),
+    path('recom-flower/recom-store/', map_view.map, name="recom-flower"),
+    path('notice/', home_view.home, name="home"),
+    path('order/', order_view.order, name="order"),
+    path('recom-flower/', recommend_view.recom, name="recom"),
+
+    path('login/', register_view.login, name="login"),
+    path('join/', register_view.join, name="join"),
+    path('review/', review_view.review, name="review"),
+
 ]

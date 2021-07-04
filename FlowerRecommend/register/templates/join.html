@@ -6,8 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="join.css">
-
+<style>#total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.loginId,
+.password {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+</style>
 </head>
 
 <body>
@@ -51,7 +62,6 @@
 
             <br>
 
-                    <form action="">
                                 <div class="password">
                                     <h2 style="display:inline">비밀번호&nbsp</h2>
                                     <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요"style="width: 200px;height: 30px;">
@@ -64,14 +74,13 @@
                                     <h4>비밀번호가 일치하지 않습니다</h4>
 
                                     <br>
-                                                                        
+                                    <form action="http://127.0.0.1:8000">                              
                                     <input type="submit" value="회원가입">
-
+                                    </form>
 
                         
                     
                                 </div>
-                        </form>
 
 </div>
 
