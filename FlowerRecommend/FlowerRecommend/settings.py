@@ -129,6 +129,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'order', 'static')]
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'recommend', 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'review', 'static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
