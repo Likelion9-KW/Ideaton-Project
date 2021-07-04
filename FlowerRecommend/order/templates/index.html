@@ -3,6 +3,41 @@
     <head>
 		<meta charset="utf-8">
         <title>예약 및 구매</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.2/dist/minty/bootstrap.min.css">   
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flower Recommendation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home
+                    <span class="visually-hidden">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'notice' %}">Notice</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'recom' %}">Recommendation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'join' %}">Sign Up</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
         <style>
             * {
     margin: 0;
@@ -104,7 +139,7 @@ a {
         {% load static %}
 		<div style="text-align: center;">
 			<form action="전송받을 대상">
-				<b>꽃집 검색</b> : <textarea clos="100" rows="2"></textarea>
+				<b>꽃집 검색</b> : <textarea clos="70" rows="2"></textarea>
 				<input type="submit" value="검색">
 			</form>
 		</div>
@@ -250,6 +285,7 @@ a {
                         </td>
                         <td>20,000원</td>
                         <td><input type="checkbox" name="check" value="select1" checked></td>
+                        
                         <td>
                             <form action="전송받을 대상">
                             갯수 : <textarea rows="2"></textarea>

@@ -62,11 +62,8 @@
     <div id=total>
         <br>
 
-
-
         <h1>Join</h1>
      
-            <br>
             <br>
                     <form action="">
                             <div>
@@ -74,19 +71,20 @@
                                         <h2 style="display:inline">ID</h2>
 
                                             <div>
-                                                <input type="email" name="id" id="id" placeholder="아이디를 입력하세요" style="width: 250px;height: 30px;">
+                                                <input type="email" name="id" id="id" placeholder="아이디를 입력하세요!" style="width: 250px;height: 30px;">
                                       
                                             </div>
-                                            <h4>사용중인 아이디 입니다</h4>
+                                            <br>
+                                            <button type="submit" class="btn btn-primary">중복체크</button>
+
                                         <br>
 
                                             
-                                                <h2 style="display:inline">닉네임</h2>
-                                                <input type="email" name="id" id="id" placeholder="닉네임을 입력하세요" style="width: 250px;height: 30px;">
-                                                <h4>사용중인 닉네임 입니다</h4>
-
-                                        <br>       
-                                                <input type="submit" value="중복체크">
+                                                <h3 style="display:inline"><b>닉네임</b></h3>
+                                                <input type="email" name="id" id="id" placeholder="닉네임을 입력하세요!" style="width: 250px;height: 30px;">
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">중복체크</button>
+                                                
 
                                     </div>
                             </div>
@@ -96,18 +94,19 @@
 
                                 <div class="password">
                                     <h2 style="display:inline">PassWord&nbsp</h2>
-                                    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요"style="width: 250px;height: 30px;">
+                                    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요!"style="width: 250px;height: 30px;">
                                 
                                     <br>
                                 
                                     
                                 
-                                    <input type="email" name="id" id="id" placeholder="비밀번호를 다시 입력하세요" style="width: 250px;height: 30px;">
-                                    <h4>비밀번호가 일치하지 않습니다</h4>
+                                    <input type="email" name="id" id="id" placeholder="비밀번호를 다시 입력하세요!" style="width: 250px;height: 30px;">
+                                    <h6>비밀번호가 일치하지 않습니다</h6>
 
                                     <br>
                                     <form action="{% url 'main' %}">                              
-                                    <input type="submit" value="회원가입">
+                                    <button type="submit" class="btn btn-primary">회원가입</button>
+
                                     </form>
 
                         
