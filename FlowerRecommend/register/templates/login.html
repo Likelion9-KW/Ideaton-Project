@@ -7,9 +7,14 @@
     <title>Document</title>
 <style>
     #total {
-  text-align: center;
-}
+        display: flex;
 
+  text-align: center;
+  justify-content: center;
+}
+.loginForm{
+  background-color: aqua;
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.2/dist/minty/bootstrap.min.css">   
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -58,37 +63,43 @@
         <br>
         
 
-    <h1>Login</h1>
     <div class="loginid">
+          <h1 >Login</h1>
+
                 <br>
                 <br>
 
 
-    <h2 style="display:inline">ID&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
-    <input type="email" name="id" id="id" placeholder="아이디를 입력하세요!" style="width: 230px;height: 30px;">
-    </div>
-    <br>
-    <br>
 
-    <div class="password">
-    <h2 style="display:inline">PW&nbsp&nbsp</h2>
-    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요!"style="width: 230px;height: 30px;">
 
-    <br>
-<br>
-    <div class="remember">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-            아이디 저장
-        </label>
- 
-    </div>
-                <br>                         
-                <form action="{% url 'main' %}"><button type="submit" class="btn btn-primary">로그인</button></form>   
-                
+<form action="{%url 'login'%}" method="post">
+  {%csrf_token%}
+  <div class="form-group">
+    <label for="subject" style="display:inline">ID&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="text" class="form-control" name="username" id="username"
+      value="{{ form.username.value|default_if_none:'' }}"style="width: 230px;height: 30px; padding-left:60px;">
+  </div>
+  <div class="form-group">
+    <label for="content"style="display:inline">PW&nbsp&nbsp</label>
+    <input type="password" class="form-control" name="password" id="password" rows="10"style="width: 230px;height: 30px;" value="{{ form.password.value|default_if_none:'' }}">
+  </div>
+  <div class="remember">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      아이디 저장
+    </label>
+  
+  </div>
+  <button type='submit'>로그인</button>
+</form>
+
+
+
 
 </div>
 
 </div>
+
+
 </body>
 </html>
