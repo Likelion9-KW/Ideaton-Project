@@ -48,7 +48,10 @@
   text-align: center;
 }
 .loginId,
-.password {
+.password,.id-input,
+.password-input,
+.password2-input,
+.nickname-input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -65,13 +68,14 @@
       <h1>Join</h1>
     
       <br>
-      <form action="">
         <div>
           <div class="loginId">
             <h2 style="display:inline">ID</h2>
-    
+    <form action="{% url 'join' %}" method="post" enctype=multipart/form-data>
+      {%csrf_token%}
+      
             <div>
-              <input type="email" name="id" id="id" placeholder="아이디를 입력하세요!" style="width: 250px;height: 30px;">
+              <input type="text"  id="id" placeholder="아이디를 입력하세요!" style="width: 250px;height: 30px;"  name="username">
     
             </div>
             <br>
@@ -80,37 +84,38 @@
     
     
             <h3 style="display:inline"><b>닉네임</b></h3>
-            <input type="email" name="id" id="id" placeholder="닉네임을 입력하세요!" style="width: 250px;height: 30px;">
+            <input type="text" id="id" placeholder="닉네임을 입력하세요!" style="width: 250px;height: 30px;"  name="nickname">
+    
             <br>
             <button type="submit" class="btn btn-primary">중복체크</button>
     
     
           </div>
         </div>
-      </form>
     
       <br>
 
       <div class="password">
         <h2 style="display:inline">PassWord&nbsp</h2>
-        <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력하세요!" style="width: 250px;height: 30px;">
+        <input type="password"  id="passwd" placeholder="비밀번호를 입력하세요!" style="width: 250px;height: 30px;"  name="password1">
       
         <br>
       
       
       
-        <input type="email" name="id" id="id" placeholder="비밀번호를 다시 입력하세요!" style="width: 250px;height: 30px;">
+        <input type="password"  id="id" placeholder="비밀번호를 다시 입력하세요!" style="width: 250px;height: 30px;"  name="password2" >
         <h6>비밀번호가 일치하지 않습니다</h6>
-      
+   
         <br>
-        <form action="{% url 'main' %}">
+        
           <button type="submit" class="btn btn-primary">회원가입</button>
       
-        </form>
-      
+        </form> 
       
       
       </div>
+
+
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -7,9 +7,23 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-
 def join_view(request):
-    return render(request, "join.html")
+    if request.method == 'POST':
+        print(request.POST['username'])
+        print(request.POST['nickname'])
+
+        form = MyAuthenticationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return redirect("main")
+        else:
+            print(form.errors)
+            return redirect("main")
+    else:
+        print("star")
+        form = MyAuthenticationForm()
+        return render(request, "join.html", {'form': form})
 
 
 def login_view(request):
